@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `states`(
     `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` varchar(255) NOT NULL DEFAULT "",
     `alias` varchar (255) NOT NULL DEFAULT "",
+    `capital` varchar (255) NOT NULL DEFAULT "",
     `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
     `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
