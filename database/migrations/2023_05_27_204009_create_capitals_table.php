@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Capital;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNigeriaState extends Migration
+class CreateCapitalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +13,10 @@ class CreateNigeriaState extends Migration
      */
     public function up()
     {
-        Schema::create('states', function (Blueprint $table) {
+        Schema::create('capitals', function (Blueprint $table) {
             $table->id();
             $table->string("name")->nullable();
-            $table->string("alias")->nullable()->unique();
-            $table->foreignIdFor(Capital::class)->nullable(false);
+            $table->string("alias")->nullable(false)->unique();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateNigeriaState extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('states');
+        Schema::dropIfExists('capitals');
     }
 }

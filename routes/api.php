@@ -25,3 +25,5 @@ Route::get("/all", [ApiController::class, "index"])->middleware("cors");
 Route::get("/states", [ApiController::class, "states"])->middleware("cors");
 //get region by alias
 Route::get("/regions/{alias}", [ApiController::class, "regions"])->middleware("cors");
+//get state by capital alias
+Route::get("/state/{alias}",[ApiController::class , "getStateByCapitalAlias"])->middleware("cors");

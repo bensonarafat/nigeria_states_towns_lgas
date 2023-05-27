@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class State extends Model
+class Capital extends Model
 {
     use HasFactory;
 
-    protected $table = "states";
+    protected $table  = 'capitals';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -18,22 +19,11 @@ class State extends Model
     protected $fillable = [
         'name',
         'alias',
-        'capital_id'
     ];
 
-    /**
-     * Get the region for the state.
-     */
-    public function regions()
+    public function states()
     {
-        return $this->hasMany(Region::class);
+        return $this->hasMany(State::class);
     }
 
-    /**
-     * Get capital
-     */
-    public function capital()
-    {
-        return $this->belongsTo(Capital::class);
-    }
 }
