@@ -2,7 +2,7 @@
  *********** Server Constants ***********
  ****************************************/
 let SERVER = {
-    APP_NAME: "Nigeria States, Cities and Local Government Area API", 
+    APP_NAME: "Nigeria States, Towns and Local Government Area API", 
     TOKEN_EXPIRATION_IN_MINUTES: 600, 
     GOOGLE_API_KEY : '',
     COUNTRY_CODE : '+234',

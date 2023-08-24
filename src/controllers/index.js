@@ -5,5 +5,5 @@
  **************************************************/
 
  module.exports = {
-    welcomeController : require('./weclome.controller'),
+    stateController : require('./state.controller'),
  }

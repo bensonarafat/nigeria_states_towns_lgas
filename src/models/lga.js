@@ -3,17 +3,14 @@
 /************* Modules ***********/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const schemaTypes = require('./schema_types');
 
 /**************************************************
- ************* City Model or collection ***********
+ ************* LGA Model or collection ***********
  **************************************************/
 
-const city_schema = new Schema({
-    name: {
-        type : String, 
-        require: true,
-    }, 
-    
+const lgaSchema = new Schema({
+
 });
 
-module.exports = mongoose.model("City", city_schema);
+module.exports = lgaSchema;

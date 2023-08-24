@@ -1,9 +1,10 @@
 "use strict";
 
 /**************************************************
- *********** Model or collection Manager **********
+ *********** Schema Types **********
  **************************************************/
 
  module.exports = {
-    stateModel : require('./state.model'),
+   ArrayTypeString : require('./array.type'),
+   location : require('./location'),
  }

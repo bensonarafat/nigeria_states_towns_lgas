@@ -25,7 +25,7 @@ let dbConfig = require('./src/configs/db.config.js');
  ***** running server (www()) ******
  ***********************************/
 db(dbConfig.mongodb.url).then(resolve => {
-    console.log(`*************** DB is connect successfully **************`);
+    console.log(`*************** DB is connected successfully **************`);
     www();
 }).catch(err => {
     console.log(`*********** Error ${err} *******`);

@@ -9,8 +9,8 @@ let serverConfig = {
         port: 27017, 
         name:"monogodb", 
         connector: "monogodb", 
-        url: process.env.dbUrl || "mongodb://localhost:27017",
-        database: "nigeria_states_cities_lgas", 
+        url: process.env.dbUrl || "mongodb://localhost:27017/nigeria_states_towns_lgas",
+        database: "nigeria_states_towns_lgas", 
         user: "", 
         password: "",
     }, 
@@ -28,8 +28,8 @@ if(process.env.NODE_ENV === "development"){
     serverConfig.mongodb.user = "";
     serverConfig.mongodb.password = "";
 }else if( process.env.NODE_ENV === "production"){
-    serverConfig.mongodb.url = process.env.dbUrl || "mongodb://127.0.0.1:27017/demo";
-    serverConfig.mongodb.database = "nigeria_states_cities_lgas";
+    serverConfig.mongodb.url = process.env.dbUrl || "mongodb://127.0.0.1:27017/nigeria_states_towns_lgas";
+    serverConfig.mongodb.database = "nigeria_states_towns_lgas";
     serverConfig.mongodb.user = "";
     serverConfig.mongodb.password = "";
     serverConfig.port = process.env.serverPort || "4001";

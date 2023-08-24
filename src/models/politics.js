@@ -3,17 +3,14 @@
 /************* Modules ***********/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const schemaTypes = require('./schema_types');
 
 /**************************************************
- ************* LGA Model or collection ***********
+ ************* politicsSchema or collection ***********
  **************************************************/
 
-const lga_schema = new Schema({
-    name: {
-        type : String, 
-        require: true,
-    }, 
-    
+const politicsSchema = new Schema({
+
 });
 
-module.exports = mongoose.model("Lga", lga_schema);
+module.exports = politicsSchema;
