@@ -46,4 +46,41 @@ module.exports = (app) => {
     app.get('/api/:state_code/religion', [
         controller.stateController.religion
     ])
+
+    // Main routes 
+    app.post("/api/add-state", [
+        controller.mainController.add
+    ])
+    app.put("/api/update-state/:id", [
+        controller.mainController.update
+    ])
+    app.delete("/api/delete-state/:id", [
+        controller.mainController.delete
+    ]);
+    app.put("/api/add-items/:type/:id", [
+        controller.mainController.addItems
+    ])
+    app.put("/api/remove-items/:type/:id", [
+        controller.mainController.removeItems
+    ])
+    
+    app.put("/api/add-lga/:id", [
+        controller.mainController.addLga
+    ])
+
+    app.put("/api/remove-lga/:id", [
+        controller.mainController.removeLga
+    ])
+
+    app.put("/api/add-town/:id", [
+        controller.mainController.addTown
+    ])
+
+    app.put("/api/remove-town/:id", [
+        controller.mainController.removeTown
+    ])
+
+    app.post("/api/add-politics/:id", [
+        controller.mainController.addPolitics
+    ])
 }

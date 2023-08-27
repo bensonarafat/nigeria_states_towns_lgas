@@ -6,7 +6,8 @@ let SERVER = {
     TOKEN_EXPIRATION_IN_MINUTES: 600, 
     GOOGLE_API_KEY : '',
     COUNTRY_CODE : '+234',
-    DOMAIN_NAME : 'http://localhost:8000/',
+    DOMAIN_URL : 'http://localhost:8000/',
+    APP_URL: 'https://vercel.com',
     CONTACT_EMAIL : 'benpaul320@gmail.com',
     PRIVILEGES: ["READ", "WRITE"],
     ISACTIVE: [

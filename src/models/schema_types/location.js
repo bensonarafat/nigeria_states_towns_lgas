@@ -6,8 +6,11 @@ const mongoose = require('mongoose');
 
 const location = new mongoose.Schema(
     {
-        latitude: mongoose.Decimal128, 
-        longitude: mongoose.Decimal128
+        latitude: String, 
+        longitude: String
+    }, 
+    {
+        _id: false,
     }
     );
 

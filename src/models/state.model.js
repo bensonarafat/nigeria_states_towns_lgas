@@ -3,11 +3,10 @@
 /************* Modules ***********/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const schemaTypes = require('./schema_types');
 const townSchema = require('./town');
 const lgaSchema = require('./lga');
 const politicsSchema = require('./politics');
-
+const schemaTypes = require("./schema_types");
 
 /**************************************************
  ************* State Model or collection ***********
@@ -47,21 +46,21 @@ const stateSchema = new Schema({
         default: null
     },
     bordering_states: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     },
     // Administrative Divisions 
     lgas: {
-        type: lgaSchema, 
+        type: [lgaSchema], 
         default: null,
     },
     towns: {
-        type: townSchema, 
+        type: [townSchema], 
         default: null,
     },
     // Natural Resources 
     national_resources: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     },
     // Government and Politics 
@@ -71,35 +70,35 @@ const stateSchema = new Schema({
     },
     // Education 
     universities: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null
     },
     polytechnics: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null
     },
     // Infrastructure / Airports
     airports: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     },
     // Healthcare
     hospitals: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     },
     // Langugages and Ethnic Groups 
     languages: {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     },
     ethnic_groups : {
-        type: [schemaTypes.ArrayTypeString], 
+        type: [String], 
         default: null,
     }, 
     // Religion 
-    dominant_religion : {
-        type:  String, 
+    religions : {
+        type:  [String], 
         default: null,
     }
 }, 
