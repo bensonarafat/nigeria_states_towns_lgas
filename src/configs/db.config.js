@@ -28,7 +28,7 @@ if(process.env.NODE_ENV === "development"){
     serverConfig.mongodb.user = "";
     serverConfig.mongodb.password = "";
 }else if( process.env.NODE_ENV === "production"){
-    serverConfig.mongodb.url = process.env.dbUrl || `mongodb+srv://root:${serverConfig.mongodb.password}@developnment.oebggbv.mongodb.net/`;
+    serverConfig.mongodb.url = process.env.dbUrl || `mongodb+srv://root:${serverConfig.mongodb.password}@developnment.oebggbv.mongodb.net/nigeria_states_towns_lgas`;
     serverConfig.mongodb.database = "nigeria_states_towns_lgas";
     serverConfig.mongodb.user = "root";
     serverConfig.mongodb.password = "n8Trhht45RaAEX8G";
