@@ -10,6 +10,16 @@ const mainController = {};
 // model initiation
 const State = model.stateModel;
 
+mainController.state = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const state = await State.findOne({ _id :id}).exec();
+        res.status(200).json(state);
+    } catch (_) {
+        res.status(500).json({message : "Oops, there was an error"});
+    }
+}
+
 mainController.add = async (req, res) => {
     const name = req.body.name;
     const latitude = req.body.latitude;

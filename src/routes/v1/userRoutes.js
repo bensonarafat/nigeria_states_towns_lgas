@@ -83,4 +83,7 @@ module.exports = (app) => {
     app.post("/api/add-politics/:id", [
         controller.mainController.addPolitics
     ])
+    app.get("/api/state/:id", [
+        controller.mainController.states
+    ])
 }
