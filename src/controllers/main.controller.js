@@ -10,7 +10,7 @@ const mainController = {};
 // model initiation
 const State = model.stateModel;
 
-mainController.state = async (req, res) => {
+mainController.states = async (req, res) => {
     const id = req.params.id;
     try {
         const state = await State.findOne({ _id :id}).exec();
