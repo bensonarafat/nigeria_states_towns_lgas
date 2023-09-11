@@ -106,7 +106,7 @@ mainController.addItems = async (req, res) => {
         let obj = {};
         obj[type] = req.body.item;
         const response = await State.findOneAndUpdate({_id: req.params.id}, { $push: obj });
-        res.status(200).json({message: "State Updated" , data : response});
+        res.status(200).json({message: "Item Added" , data : response});
     } catch (_) {
         res.status(500).json({message : "Oops, there was an error"});
     }
