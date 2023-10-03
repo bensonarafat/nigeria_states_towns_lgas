@@ -16,7 +16,7 @@ mainController.states = async (req, res) => {
         const state = await State.findOne({ _id :id}).exec();
         res.status(200).json(state);
     } catch (_) {
-        res.status(500).json({message : "Oops, there was an error"});
+        res.status(500).json({message : "Oops, there was an error", error: _.toString()});
     }
 }
 
