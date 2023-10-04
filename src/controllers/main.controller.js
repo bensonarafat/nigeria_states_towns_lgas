@@ -132,7 +132,6 @@ mainController.addLga = async (req, res) => {
             total_area: req.body.total_area, 
             postal_code: req.body.postal_code,
             population: req.body.population,
-            lga_code: req.body.lga_code,
             creation_date: req.body.creation_date,
             location : {
                 latitude : req.body.latitude,
@@ -156,7 +155,6 @@ mainController.removeLga = async (req, res) => {
             total_area: req.body.total_area, 
             postal_code: req.body.postal_code,
             population: req.body.population,
-            lga_code: req.body.lga_code,
             creation_date: req.body.creation_date,
             location : {
                 latitude : req.body.latitude,

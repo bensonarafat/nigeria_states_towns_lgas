@@ -14,10 +14,6 @@ const lgaSchema = new Schema({
         type: String, 
         require : true,
     }, 
-    lga_code: {
-        type: String, 
-        require: true,
-    },
     location: {
         type: schemaTypes.location, 
         default: null,
