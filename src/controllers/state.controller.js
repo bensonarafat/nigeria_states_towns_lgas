@@ -14,7 +14,11 @@ const State = model.stateModel;
  stateController.all = async (req, res) => {
    try {
       let _state = await State.find();
-      res.status(200).json(_state);
+      const clean = _state.map((s) => {
+         const {_id, rest} = s;
+         return rest;
+      });
+      res.status(200).json(clean);
    } catch (_) {
       res.status(500).json({message: "Server Error"});
    }
