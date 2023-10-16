@@ -54,7 +54,7 @@ const State = model.stateModel;
  stateController.towns = async (req, res) => {
     let state_code = req.params.state_code;
     try {
-      let _state = await State.find({state_code : state_code}).exec();
+      let _state = await State.findOne({state_code : state_code}).exec();
       let towns = _state['towns'];
       if(towns){
          res.status(200).json(towns)
