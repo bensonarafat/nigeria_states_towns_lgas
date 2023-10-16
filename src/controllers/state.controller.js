@@ -52,9 +52,9 @@ const State = model.stateModel;
  }
 
  stateController.towns = async (req, res) => {
-    let state_code = req.params.status_code;
+    let state_code = req.params.state_code;
     try {
-      let _state = await State.findOne({state_code : state_code}).exec();
+      let _state = await State.find({state_code : state_code}).exec();
       let towns = _state['towns'];
       if(towns){
          res.status(200).json(towns)
@@ -62,12 +62,12 @@ const State = model.stateModel;
          res.status(200).json({message: `Town is Empty. We are open to contributions at ${constants.SERVER.APP_URL}. Thank you!`});
       }
    } catch (_) {
-      res.status(500).json({message: "Server Error"});
+      res.status(500).json({message: "Server Error", state_code});
    }
  }
 
  stateController.lgas = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let lgas = _state['lgas'];
@@ -81,7 +81,7 @@ const State = model.stateModel;
    }
  }
  stateController.resources = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let resources = _state['national_resources'];
@@ -96,7 +96,7 @@ const State = model.stateModel;
 }
 
 stateController.politics =  async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let politics = _state['politics'];
@@ -111,7 +111,7 @@ stateController.politics =  async (req, res) => {
 }
 
 stateController.universities = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let universities = _state['universities'];
@@ -126,7 +126,7 @@ stateController.universities = async (req, res) => {
 }
 
 stateController.polytechnics = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let polytechnics = _state['polytechnics'];
@@ -141,7 +141,7 @@ stateController.polytechnics = async (req, res) => {
 }
 
 stateController.airports = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let airports = _state['airports'];
@@ -156,7 +156,7 @@ stateController.airports = async (req, res) => {
 }
 
 stateController.hospitals = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let hospitals = _state['hospitals'];
@@ -171,7 +171,7 @@ stateController.hospitals = async (req, res) => {
 }
 
 stateController.languages = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let languages = _state['languages'];
@@ -186,7 +186,7 @@ stateController.languages = async (req, res) => {
 }
 
 stateController.ethnicity = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let ethnic_groups = _state['ethnic_groups'];
@@ -201,7 +201,7 @@ stateController.ethnicity = async (req, res) => {
 }
  
 stateController.religion = async (req, res) => {
-   let state_code = req.params.status_code;
+   let state_code = req.params.state_code;
    try {
       let _state = await State.findOne({state_code : state_code}).exec();
       let religions = _state['religions'];

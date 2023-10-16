@@ -7,7 +7,7 @@ let SERVER = {
     GOOGLE_API_KEY : '',
     COUNTRY_CODE : '+234',
     DOMAIN_URL : 'http://localhost:8000/',
-    APP_URL: 'https://vercel.com',
+    APP_URL: 'https://nigeria-locality.vercel.app/',
     CONTACT_EMAIL : 'benpaul320@gmail.com',
     PRIVILEGES: ["READ", "WRITE"],
     ISACTIVE: [
