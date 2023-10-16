@@ -10,6 +10,17 @@ const mainController = {};
 // model initiation
 const State = model.stateModel;
 
+
+mainController.all = async (req, res) => {
+    try {
+       let _state = await State.find();
+       res.status(200).json(_state);
+    } catch (_) {
+       res.status(500).json({message: "Server Error"});
+    }
+  }
+
+  
 mainController.states = async (req, res) => {
     const id = req.params.id;
     try {

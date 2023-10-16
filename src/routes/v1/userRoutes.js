@@ -48,6 +48,9 @@ module.exports = (app) => {
     ])
 
     // Main routes 
+    app.post("/api/all-state", [
+        controller.mainController.all
+    ])
     app.post("/api/add-state", [
         controller.mainController.add
     ])
