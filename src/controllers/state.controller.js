@@ -15,8 +15,8 @@ const State = model.stateModel;
    try {
       let _state = await State.find();
       const raw = _state.map((state) => {
-         const {_id, name, capital, towns, lgas, state_code} = state;
-         return {name, capital, towns, lgas};
+         const {_id, name, capital, towns, lgas, state_code, creation_date, location, total_area, population, postal_code, bordering_states, national_resources, politics, universities, polytechnics, airports, hospitals, languages, ethnic_groups, religions} = state;
+         return {name, capital, state_code, creation_date, location, total_area, population, towns, lgas, postal_code, bordering_states, national_resources, politics, universities, polytechnics, airports, hospitals, languages, ethnic_groups, religions};
       });
       res.status(200).json(raw);
    } catch (_) {
@@ -37,9 +37,15 @@ const State = model.stateModel;
             'state_code', 
             'total_area', 
             'population', 
-            'dominant_religion'
+            'religions'
          ]).exec();
-      res.status(200).json(_state);
+         
+      const raw = _state.map((state) => {
+         const {_id, name, capital, state_code, creation_date, location, total_area, population, postal_code, religions} = state;
+         return {name, capital, state_code, creation_date, location, total_area, population, postal_code, religions};
+      });
+
+      res.status(200).json(raw);
    } catch (_) {
       res.status(500).json({message: "Server Error"});
    }
