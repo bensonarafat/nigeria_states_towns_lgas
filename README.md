@@ -1,101 +1,143 @@
-# Nigeria State and Region API
-**Introduction to using the api** 
+## Nigeris States, Towns and Local Government Area
 
-Locus is an awesome api to fetch all states, Towns and region in Nigerian!! 
-I was in of it, when i made it. So feel free to use it for your own need. 
+API Endpoint
 
-API endpoint `https://locus.fkkas.com/api/` 
-
-Send a `GET` request to get all states in Nigeria
-`curl https://locus.fkkas.com/api/states` 
-
-**Response**
-```javascript
-  { 
-    data: [
-      {
-      id: 6, 
-      name: "Abia", 
-      alias: "abia"
-      }, 
-      {
-      "id":1,
-      "name":"Abuja (FCT)",
-      "alias":"abuja"
-      }
-     ]
-   }
+```curl
+https://nigeria-states-towns-lga.onrender.com/api
 ```
-Send a `GET` request to get all state regions by adding the state `alias` to `curl https://locus.fkkas.com/api/regions/{alias}` 
+API Overview:
 
-**Example**
-`curl https://locus.fkkas.com/api/regions/abuja`
+Your API provides information about Nigeria State, Towns, Local Government Areas, languages spoken, hospitals, airports, universities, polytechnics, and more. Here's how to interact with it with some examples:
 
-```javascript
-  { 
-    data: [
-        {
-        "id":6,
-        "name":"Abaji"
-        },
+### Get All States and their details
+1. Method: `GET`
+2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/all`
+3. Description: Retrieve a list of all states in Nigeria.
+4. Response: An array of state objects, each containing information about the state.
+
+### Response Example 
+
+```json
+[
+  {
+    "name": "Abia State",
+    "capital": "Umuahia",
+    "state_code": "ABIA",
+    "creation_date": "1991",
+    "location": {
+      "latitude": "5.4527",
+      "longitude": "7.5248"
+    },
+    "total_area": "6320",
+    "population": 4112230,
+    "towns": [
       {
-      "id":7,
-      "name":"Apo District"
-      }, 
-      {
-      "id":8,
-      "name":"Asokoro",
-      }
-     ]
-   }
+        ...
+        ...
+        ...
 ```
 
-Send a `GET` request to get all in nigeria `curl https://locus.fkkas.com/api/all` 
+### Get only states information
+1. Method: `GET`
+2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/states`
+3. Description: Retrieve a list of all states in Nigeria.
+4. Response: Returns a list of states in nigeria only
 
-**Response** 
-```javascript
-  { 
-    data: [
-      {
-      id: 6, 
-      name: "Abia", 
-      alias: "abia"
-      }, 
-      {
-      "id":1,
-      "name":"Abuja (FCT)",
-      "alias":"abuja"
-      }
-     ]
-   }
+### Response Example 
+
+```json
+[
+  {
+    "name": "Abia State",
+    "capital": "Umuahia",
+    "state_code": "ABIA",
+    "creation_date": "1991",
+    "location": {
+      "latitude": "5.4527",
+      "longitude": "7.5248"
+    },
+    "total_area": "6320",
+    "population": 4112230,
+    "postal_code": null,
+    "religions": []
+  },
+  {
+    "name": "Adamawa",
+    "capital": "Yola",
+    ...
+    ...
 ```
 
+### Get Towns in a State
+1. Method: `GET`
+2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/towns`
+3. Description: Retrieve a list of towns within a specific state by providing the state_code.
+4. Response: An array of state objects within the specified town.
 
-## Contributing
+### Example
 
-Contributions are welcome.
-In case of any problems look at [existing issues](https://github.com/bensonarafat/nigeria-state-city-api/issues), if you cannot find anything related to your problem then open an issue.
-Create an issue before opening a [pull request](https://github.com/bensonarafat/nigeria-state-city-api/pulls) for non trivial fixes.
-In case of trivial fixes open a [pull request](https://github.com/bensonarafat/nigeria-state-city-api/pulls) directly.
+```curl
+https://nigeria-states-towns-lga.onrender.com/api/FCT/towns
+```
+### Response 
 
-**You can contribute in two ways**
-- Updating the `MySQL` file 
-- And updating the `laravel` code 
+```json
+[
+  {
+    "name": "Lokogoma",
+    "location": {
+      "latitude": null,
+      "longitude": null
+    },
+    "population": null,
+    "postal_code": null,
+    "total_area": null,
+    "creation_date": null
+  },
+  {
+    "name": "Galadimawa",
+    "location": {
+      "latitude": null,
+      "longitude": null
+    },
+```
 
-**Updating the MySQL file**
+### Get LGA in a State
+1. Method: `GET`
+2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/lgas`
+3. Description: Retrieve a list of LGA within a specific state by providing the state_code.
+4. Response: An array of state objects within the specified lgas.
 
-- Go to the `sql/db.sql` directory
-- To add new states: go to the *states table* and update it at the end of the list 
-- To add new region: go to the *regions table* and add the new list at the bottom remember to add the state_id 
+### Example
 
-**Updating the Laravel code: You need to install it** 
+```curl
+https://nigeria-states-towns-lga.onrender.com/api/ABIA/lgas
+```
+### Response 
 
-## Installation
-- Run the command `composer install`
-- If `.env` file diesn't exist, run the command `cp .env.example .env`
-- Run the command `php artisan key:generate`
-- Run the command `php artisan migrate` 
-- You will be also asked to create the database, type `y` or `yes` 
--  If the above didn't prompt on your termial then do this. In the `.env` Update the database name with the one you created, to allow connection to a database else skip this step.
-- Run `php artisan serve` to start server 
-- Open your brower and enter the url, which might be `http://127.0.0.1:8000`
+```json
+[
+  {
+    "name": "Aba North",
+    "location": {
+      "latitude": null,
+      "longitude": null
+    },
+    "total_area": null,
+    "postal_code": null,
+    "population": null,
+    "creation_date": null
+  },
+  {
+    "name": "Aba South",
+    "location": {
+      "latitude": null,
+      "longitude": null
+    },
+    ..
+    ..
+    ..
+```
+
+## Others
+You can also re
