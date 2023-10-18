@@ -1,5 +1,7 @@
 ## Nigeris States, Towns and Local Government Area
 
+[![Node.js CI](https://github.com/bensonarafat/nigeria_states_towns_lgas/actions/workflows/node.js.yml/badge.svg)](https://github.com/bensonarafat/nigeria_states_towns_lgas/actions/workflows/node.js.yml)
+
 API Endpoint
 
 ```curl
@@ -33,8 +35,6 @@ Your API provides information about Nigeria State, Towns, Local Government Areas
     "towns": [
       {
         ...
-        ...
-        ...
 ```
 
 ### Get only states information
@@ -65,14 +65,13 @@ Your API provides information about Nigeria State, Towns, Local Government Areas
     "name": "Adamawa",
     "capital": "Yola",
     ...
-    ...
 ```
 
 ### Get Towns in a State
 1. Method: `GET`
 2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/towns`
 3. Description: Retrieve a list of towns within a specific state by providing the state_code.
-4. Response: An array of state objects within the specified town.
+4. Response: An array of towns objects within the specified state.
 
 ### Example
 
@@ -106,7 +105,7 @@ https://nigeria-states-towns-lga.onrender.com/api/FCT/towns
 1. Method: `GET`
 2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/lgas`
 3. Description: Retrieve a list of LGA within a specific state by providing the state_code.
-4. Response: An array of state objects within the specified lgas.
+4. Response: An array of lga objects within the specified state.
 
 ### Example
 
@@ -135,9 +134,44 @@ https://nigeria-states-towns-lga.onrender.com/api/ABIA/lgas
       "longitude": null
     },
     ..
-    ..
-    ..
 ```
 
 ## Others
-You can also re
+You can also get items for any of the states. Examples: like the National Resources, Languages spoken, Ethnic Groups, Religions etc. 
+
+### Example
+
+
+1. Method: `GET`
+2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/{type}`
+3. Description: Retrieve a list of items within a specific state by providing the state_code and type.
+4. Response: An array of items objects within the specified state.
+
+
+```curl
+https://nigeria-states-towns-lga.onrender.com/api/FCT/airports
+```
+
+### Response 
+
+```json
+[
+  "Nnamdi Azikiwe International Airport"
+]
+```
+
+## Contributing
+
+Contributions are done in two ways
+
+Firstly, contributing to this `repository`
+
+In case of any problems look at [existing issues](https://github.com/bensonarafat/nigeria_states_towns_lgas/issues), if you cannot find anything related to your problem then open an issue.
+Create an issue before opening a [pull request](https://github.com/bensonarafat/nigeria_states_towns_lgas/pulls) for non trivial fixes.
+In case of trivial fixes open a [pull request](https://github.com/bensonarafat/nigeria_states_towns_lgas/pulls) directly.
+
+Secondary, contributing to the live update app [`https://nigeria-locality.vercel.app/`](https://nigeria-locality.vercel.app/) and it's repository [here](https://github.com/bensonarafat/nga-locality)
+
+## Support Me
+
+<a href="https://www.buymeacoffee.com/bensonarafat"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150" /></a>
