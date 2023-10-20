@@ -160,6 +160,8 @@ https://nigeria-states-towns-lga.onrender.com/api/FCT/airports
 ]
 ```
 
+Read more: [here](https://bensonarafat.medium.com/using-the-nigeria-state-town-and-local-government-api-d73451696c54)
+
 ## Contributing
 
 Contributions are done in two ways
