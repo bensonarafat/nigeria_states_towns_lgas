@@ -12,7 +12,7 @@
 API Endpoint
 
 ```curl
-https://nigeria-states-towns-lga.onrender.com/api
+https://nigeria-states-towns-lgas.onrender.com/api
 ```
 API Overview:
 
@@ -20,7 +20,7 @@ Your API provides information about Nigeria State, Towns, Local Government Areas
 
 ### Get All States and their details
 1. Method: `GET`
-2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/all`
+2. Endpoint: `https://nigeria-states-towns-lgas.onrender.com/api/all`
 3. Description: Retrieve a list of all states in Nigeria.
 4. Response: An array of state objects, each containing information about the state.
 
@@ -46,7 +46,7 @@ Your API provides information about Nigeria State, Towns, Local Government Areas
 
 ### Get only states information
 1. Method: `GET`
-2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/states`
+2. Endpoint: `https://nigeria-states-towns-lgas.onrender.com/api/states`
 3. Description: Retrieve a list of all states in Nigeria.
 4. Response: Returns a list of states in nigeria only
 
@@ -76,14 +76,14 @@ Your API provides information about Nigeria State, Towns, Local Government Areas
 
 ### Get Towns in a State
 1. Method: `GET`
-2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/towns`
+2. Endpoint: `https://nigeria-states-towns-lgas.onrender.com/api/{state_code}/towns`
 3. Description: Retrieve a list of towns within a specific state by providing the state_code.
 4. Response: An array of towns objects within the specified state.
 
 ### Example
 
 ```curl
-https://nigeria-states-towns-lga.onrender.com/api/FCT/towns
+https://nigeria-states-towns-lgas.onrender.com/api/FCT/towns
 ```
 ### Response 
 
@@ -110,14 +110,14 @@ https://nigeria-states-towns-lga.onrender.com/api/FCT/towns
 
 ### Get LGA in a State
 1. Method: `GET`
-2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/lgas`
+2. Endpoint: `https://nigeria-states-towns-lgas.onrender.com/api/{state_code}/lgas`
 3. Description: Retrieve a list of LGA within a specific state by providing the state_code.
 4. Response: An array of lga objects within the specified state.
 
 ### Example
 
 ```curl
-https://nigeria-states-towns-lga.onrender.com/api/ABIA/lgas
+https://nigeria-states-towns-lgas.onrender.com/api/ABIA/lgas
 ```
 ### Response 
 
@@ -150,13 +150,13 @@ You can also get items for any of the states. Examples: like the National Resour
 
 
 1. Method: `GET`
-2. Endpoint: `https://nigeria-states-towns-lga.onrender.com/api/{state_code}/{type}`
+2. Endpoint: `https://nigeria-states-towns-lgas.onrender.com/api/{state_code}/{type}`
 3. Description: Retrieve a list of items within a specific state by providing the state_code and type.
 4. Response: An array of items objects within the specified state.
 
 
 ```curl
-https://nigeria-states-towns-lga.onrender.com/api/FCT/airports
+https://nigeria-states-towns-lgas.onrender.com/api/FCT/airports
 ```
 
 ### Response 
